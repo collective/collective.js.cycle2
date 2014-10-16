@@ -16,11 +16,12 @@ setup(
     description=description,
     long_description=long_description,
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Framework :: Plone',
         'Framework :: Plone :: 4.2',
         'Framework :: Plone :: 4.3',
+        'Framework :: Plone :: 5.0',
         'Intended Audience :: System Administrators',
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
         'Operating System :: OS Independent',
