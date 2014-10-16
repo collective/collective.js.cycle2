@@ -56,7 +56,7 @@ Check the box next to ``collective.js.cycle2`` and click the 'Activate' button.
 Functional Plugins
 ------------------
 
-The package also install the following Cycle2 functional plugins::
+The package also install the following Cycle2 functional plugins:
 
 Center
     Support for centering slides horizontally and vertically within the slideshow container.
