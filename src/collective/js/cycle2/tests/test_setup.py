@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
+from collective.js.cycle2.config import PROJECTNAME
 from collective.js.cycle2.testing import INTEGRATION_TESTING
 
 import unittest
-
-PROJECTNAME = 'collective.js.cycle2'
 
 
 class InstallTestCase(unittest.TestCase):
