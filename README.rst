@@ -11,6 +11,8 @@ Life, the Universe, and Everything
 It supports a declarative initialization style that allows full customization without any scripting.
 Simply include the plugin, declare your markup, and Cycle2 does the rest.
 
+This package adds a browser resource to use Cycle2 and its plugins on a Plone site.
+
 .. _`Cycle2`: http://jquery.malsup.com/cycle2/
 
 Mostly Harmless
@@ -49,23 +51,40 @@ Go to the 'Site Setup' page in a Plone site and click on the 'Add-ons' link.
 
 Check the box next to ``collective.js.cycle2`` and click the 'Activate' button.
 
-.. Note::
+Usage
+-----
 
-    You may have to empty your browser cache and save your resource registries in order to see the effects of the product installation.
+If your page template inherits from ``main_template``,
+just include the resources on it by usign the following syntax::
 
-Functional Plugins
-------------------
+    ...
+    <metal:block fill-slot="javascript_head_slot">
+      <script src="++resource++collective.js.cycle2/jquery.cycle2.min.js"
+          tal:attributes="src string:$portal_url/++resource++collective.js.cycle2/jquery.cycle2.min.js"></script>
+    </metal:block>
+    ...
 
-The package also install the following Cycle2 functional plugins:
+Plugins
+-------
 
-Center
-    Support for centering slides horizontally and vertically within the slideshow container.
-    You can do this easily yourself with fixed-size slideshows and simple CSS.
-    This plugin makes life simpler when your slideshow has a fluid width or height.
+The package also includes the code for the following plugins:
 
-Swipe
-    If you want swipe events and you're not using jQuery Mobile, use this plugin.
-    This plugin provides support for advancing slides forward or back using a swipe gesture on touch devices.
+* Transition
+    * Carousel
+    * Flip
+    * IE-Fade
+    * ScrollVert
+    * Shuffle
+    * Tile
+* Functional
+    * Caption2
+    * Center
+    * Swipe
+    * YouTube
+
+Check Cycle2 `download page`_ for more information.
+
+.. _`download page`: http://jquery.malsup.com/cycle2/download/
 
 Not entirely unlike
 ===================
