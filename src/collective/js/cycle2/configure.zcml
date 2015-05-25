@@ -2,12 +2,12 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
-    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.js.cycle2">
 
   <five:registerPackage package="." />
 
-  <gs:registerProfile
+  <genericsetup:registerProfile
       name="default"
       title="collective.js.cycle2"
       directory="profiles/default"
@@ -15,11 +15,8 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <include package=".upgrades" />
+  <browser:resourceDirectory name="collective.js.cycle2" directory="resources" />
 
-  <browser:resourceDirectory
-    name="collective.js.cycle2"
-    directory="resources"
-    />
+  <include package=".upgrades" />
 
 </configure>

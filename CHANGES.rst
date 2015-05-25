@@ -6,8 +6,8 @@ There's a frood who really knows where his towel is.
 1.0a2 (unreleased)
 ------------------
 
-- Remove browser layer and registered javascripts / add extra javascript files
-  from cycle2. (closes `#1`_)
+- Remove browser layer and JS resource registry registrations.
+  Include all Cycle2 and plugins code as browser resources (closes `#1`_).
   [rodfersou]
 
 

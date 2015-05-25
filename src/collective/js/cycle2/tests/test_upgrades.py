@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.js.cycle2.interfaces import IAddOnInstalled
 from collective.js.cycle2.testing import INTEGRATION_TESTING
-from plone import api
-from plone.browserlayer import utils
-from zope.interface import Interface
 
 import unittest
 
@@ -59,33 +55,32 @@ class Upgrade1000to1001TestCase(UpgradeTestCaseBase):
         self.assertEqual(self._how_many_upgrades_to_do(), 1)
 
     def test_issue_1(self):
+        from collective.js.cycle2.interfaces import IAddOnInstalled
+        from collective.js.cycle2.upgrades.v1001 import JS_REGISTERED
+        from plone.browserlayer import utils
+
         # check if the upgrade step is registered
-        title = u'Remove browser layer and jsregistry'
-        description = u'We don\'t need a profile for this package.'
+        title = u'Remove browser layer and JS resource registry registrations'
         step = self._get_upgrade_step(title)
         self.assertIsNotNone(step)
-        self.assertEqual(step['description'], description)
 
+        # simulate state on previous version
         js_tool = self.portal['portal_javascripts']
-        JS_IDS = [
-            '++resource++collective.js.cycle2/jquery.cycle2.min.js',
-            '++resource++collective.js.cycle2/jquery.cycle2.center.min.js',
-            '++resource++collective.js.cycle2/jquery.cycle2.swipe.min.js'
-        ]
-        for js_id in JS_IDS:
+        for js_id in JS_REGISTERED:
             js_tool.registerResource(js_id)
 
         resource_ids = js_tool.getResourceIds()
-        for js_id in JS_IDS:
+        for js_id in JS_REGISTERED:
             self.assertIn(js_id, resource_ids)
 
         utils.register_layer(IAddOnInstalled, name='collective.js.cycle2')
         self.assertIn(IAddOnInstalled, utils.registered_layers())
 
+        # run the upgrade step to validate the update
         self._do_upgrade_step(step)
 
         resource_ids = js_tool.getResourceIds()
-        for js_id in JS_IDS:
+        for js_id in JS_REGISTERED:
             self.assertNotIn(js_id, resource_ids)
 
         self.assertNotIn(IAddOnInstalled, utils.registered_layers())
