@@ -15,6 +15,8 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <browser:resourceDirectory name="collective.js.cycle2" directory="static" />
+  <browser:resourceDirectory name="collective.js.cycle2" directory="resources" />
+
+  <include package=".upgrades" />
 
 </configure>

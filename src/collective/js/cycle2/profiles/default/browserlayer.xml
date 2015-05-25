@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<layers>
-  <layer
-      name="collective.js.cycle2"
-      interface="collective.js.cycle2.interfaces.IAddOnInstalled"
-      />
-</layers>
