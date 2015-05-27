@@ -53,12 +53,19 @@ Usage
 If your page template inherits from ``main_template``,
 just include the resources on it by usign the following syntax::
 
-    ...
     <metal:block fill-slot="javascript_head_slot">
       <script src="++resource++collective.js.cycle2/jquery.cycle2.min.js"
           tal:attributes="src string:$portal_url/++resource++collective.js.cycle2/jquery.cycle2.min.js"></script>
     </metal:block>
-    ...
+
+Alternatively you can add them into your site's JavaScript Registry directly or by using GenericSetup::
+
+    <?xml version="1.0"?>
+    <object name="portal_javascripts">
+      <javascript
+          cacheable="True" compression="none" cookable="True" enabled="True"
+          id="++resource++collective.js.cycle2/jquery.cycle2.min.js" />
+    </object>
 
 Plugins
 -------
