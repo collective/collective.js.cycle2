@@ -3,7 +3,7 @@ Changelog
 
 There's a frood who really knows where his towel is.
 
-1.0a2 (unreleased)
+1.0b1 (2015-05-27)
 ------------------
 
 - Remove browser layer and JS resource registry registrations.
