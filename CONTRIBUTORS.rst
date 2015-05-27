@@ -4,6 +4,7 @@ Share and Enjoy
 ``collective.js.cycle2`` would not have been possible without the contribution of the following people:
 
 - Héctor Velarde
+- Rodrigo Ferreira de Souza
 - Mike Alsup (`Cycle2`_)
 
 You can find an updated list of package contributors on `GitHub`_.
