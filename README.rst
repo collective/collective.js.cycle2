@@ -89,6 +89,55 @@ Check Cycle2 `download page`_ for more information.
 
 .. _`download page`: http://jquery.malsup.com/cycle2/download/
 
+
+Utility
+=======
+
+The ``utils.js`` script has an utility that:
+
+* Fix the player size according with the width of the container and the aspect ratio.
+* Vertically center images.
+* Sync the player, description and thumbnails when click in other picture or next/prev buttons.
+
+Usage
+-----
+
+To use the utility, you need to add the script in the same way you add the cycle2 script::
+
+If your page template inherits from ``main_template``,
+just include the resources on it by usign the following syntax::
+
+    <metal:block fill-slot="javascript_head_slot">
+      <script src="++resource++collective.js.cycle2/utils.min.js"
+          tal:attributes="src string:$portal_url/++resource++collective.js.cycle2/utils.min.js"></script>
+    </metal:block>
+
+Alternatively you can add them into your site's JavaScript Registry directly or by using GenericSetup::
+
+    <?xml version="1.0"?>
+    <object name="portal_javascripts">
+      <javascript
+          cacheable="True" compression="none" cookable="True" enabled="True"
+          id="++resource++collective.js.cycle2/utils.min.js" />
+    </object>
+
+And in your script you should call the utility object passing the gallery element::
+
+    $(window).load(function() {
+      var i, len, ref, slideshow;
+      ref = $('.slideshow-container');
+      for (i = 0, len = ref.length; i < len; i++) {
+        slideshow = ref[i];
+        new cycle2SlideShow(slideshow);
+      }
+    });
+
+Currently used in these packages:
+
+* `sc.photogallery`_: Content Type and Cover Tile.
+* `collective.nitf`_: Slideshow View
+
+
 Not entirely unlike
 ===================
 
@@ -97,3 +146,5 @@ Not entirely unlike
     The aim is to simplify the process of creating professional image galleries for the web and mobile devices.
 
 .. _`collective.js.galleria`: https://pypi.python.org/pypi/collective.js.galleria
+.. _`sc.photogallery`: https://github.com/simplesconsultoria/sc.photogallery
+.. _`collective.nitf`: https://github.com/collective/collective.nitf
