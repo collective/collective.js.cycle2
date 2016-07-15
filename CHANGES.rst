@@ -6,6 +6,9 @@ There's a frood who really knows where his towel is.
 1.0b2 (unreleased)
 ------------------
 
+- Fade in slideshows to avoid showing them before Cycle2 is loaded.
+  [rodfersou]
+
 - Add `utils.js` script;
   this script can be used by third party add-ons to easily create responsive slideshows.
   [rodfersou]
