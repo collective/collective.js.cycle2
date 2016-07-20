@@ -24,6 +24,7 @@
       this.bindEvents();
       this.fixImageSize();
       this.centerImage();
+      $(el).fadeTo('slow', 1);
     }
     Cycle2SlideShow.prototype.bindEvents = function() {
       this.$player.on('cycle-next cycle-prev', $.proxy(this.syncSlideshows, this));
