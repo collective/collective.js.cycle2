@@ -6,7 +6,9 @@ There's a frood who really knows where his towel is.
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add `utils.js` script;
+  this script can be used by third party add-ons to easily create responsive slideshows.
+  [rodfersou]
 
 
 1.0b1 (2015-05-27)
