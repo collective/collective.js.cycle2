@@ -6,7 +6,8 @@ There's a frood who really knows where his towel is.
 1.0rc1 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Use <img> attributes to get image height (fix use with collective.lazysizes).
+  [rodfersou]
 
 
 1.0b2 (2016-07-20)
