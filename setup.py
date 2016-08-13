@@ -42,17 +42,25 @@ setup(
     zip_safe=False,
     install_requires=[
         'plone.api',
+        'plone.app.registry',
+        'plone.directives.form',
         'Products.CMFPlone >=4.2',
         'Products.GenericSetup',
         'setuptools',
+        'zope.i18nmessageid',
+        'zope.interface',
+        'zope.schema',
     ],
     extras_require={
         'test': [
+            'AccessControl',
             'plone.app.robotframework',
             'plone.app.testing [robot] >=4.2.2',
             'plone.browserlayer',
+            'plone.registry',
             'plone.testing',
             'robotsuite',
+            'zope.component',
         ],
     },
     entry_points="""

@@ -7,12 +7,31 @@
 
   <five:registerPackage package="." />
 
+  <include package="Products.CMFCore" file="permissions.zcml" />
+  <include package="plone.directives.form" file="meta.zcml" />
+  <include package="plone.directives.form" />
+
   <genericsetup:registerProfile
       name="default"
       title="collective.js.cycle2"
       directory="profiles/default"
       description="Integration of Cycle2 jQuery plugin in Plone."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.js.cycle2"
+      directory="profiles/uninstall"
+      description="Uninstall profile for the collective.js.cycle2 package."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <browser:page
+      name="cycle2-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.Cycle2SettingsControlPanel"
+      permission="cmf.ManagePortal"
       />
 
   <browser:resourceDirectory name="collective.js.cycle2" directory="resources" />
